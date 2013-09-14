@@ -9,11 +9,11 @@
 #import "Pessoa.h"
 
 @implementation Pessoa
-/*
+
 -(id)init
 {
-    NSlog(@"Pessoa inicializada.");
+    NSLog(@"Pessoa inicializada.");
     return self;
 }
-*/
+
 @end

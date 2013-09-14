@@ -32,7 +32,6 @@
     NSLog(@"DADOS SALVOS");
     NSLog(@"Nome pessoa: %@", objPessoa.Nome);
     NSLog(@"Telefone: %@", objPessoa.Telefone);
-
     
 }
 

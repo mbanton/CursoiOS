@@ -35,8 +35,12 @@ UITextField *BoxTelefone;
     
     BoxNome.borderStyle = UITextBorderStyleRoundedRect;
     BoxTelefone.borderStyle = UITextBorderStyleRoundedRect;
-    BoxNome.tag = 10;
-    BoxTelefone.tag = 11;
+    BoxNome.tag = 101;
+    BoxTelefone.tag = 102;
+    
+    // Faço o delegate com essa propria classe
+    BoxNome.delegate = self;
+    BoxTelefone.delegate = self;
     
     
     LabelNome.Text = @"Nome: ";
@@ -49,6 +53,16 @@ UITextField *BoxTelefone;
     [self.view addSubview: BoxTelefone];
     
      
+}
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    NSLog(@"TExt Did Begin TAG: %ld", (long) textField.tag);
+}
+
+- (void) textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"TExt Did End TAG: %ld", (long) textField.tag);
 }
 
 - (void)didReceiveMemoryWarning
