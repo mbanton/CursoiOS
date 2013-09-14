@@ -18,6 +18,8 @@
 		57D8F5F917E4A1C10024C29B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D8F5F817E4A1C10024C29B /* Default-568h@2x.png */; };
 		57D8F5FC17E4A1C10024C29B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D8F5FA17E4A1C10024C29B /* MainStoryboard.storyboard */; };
 		57D8F5FF17E4A1C10024C29B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D8F5FE17E4A1C10024C29B /* ViewController.m */; };
+		57D8F60717E4A72B0024C29B /* SalvaDados.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D8F60617E4A72B0024C29B /* SalvaDados.m */; };
+		57D8F60A17E4DBE00024C29B /* Pessoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D8F60917E4DBE00024C29B /* Pessoa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		57D8F5FB17E4A1C10024C29B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		57D8F5FD17E4A1C10024C29B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		57D8F5FE17E4A1C10024C29B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		57D8F60517E4A72B0024C29B /* SalvaDados.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalvaDados.h; sourceTree = "<group>"; };
+		57D8F60617E4A72B0024C29B /* SalvaDados.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalvaDados.m; sourceTree = "<group>"; };
+		57D8F60817E4DBE00024C29B /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pessoa.h; path = ../Pessoa.h; sourceTree = "<group>"; };
+		57D8F60917E4DBE00024C29B /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pessoa.m; path = ../Pessoa.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +89,16 @@
 		57D8F5E817E4A1C10024C29B /* ConsultaData */ = {
 			isa = PBXGroup;
 			children = (
+				57D8F60817E4DBE00024C29B /* Pessoa.h */,
+				57D8F60917E4DBE00024C29B /* Pessoa.m */,
 				57D8F5F117E4A1C10024C29B /* AppDelegate.h */,
 				57D8F5F217E4A1C10024C29B /* AppDelegate.m */,
 				57D8F5FA17E4A1C10024C29B /* MainStoryboard.storyboard */,
 				57D8F5FD17E4A1C10024C29B /* ViewController.h */,
 				57D8F5FE17E4A1C10024C29B /* ViewController.m */,
 				57D8F5E917E4A1C10024C29B /* Supporting Files */,
+				57D8F60517E4A72B0024C29B /* SalvaDados.h */,
+				57D8F60617E4A72B0024C29B /* SalvaDados.m */,
 			);
 			path = ConsultaData;
 			sourceTree = "<group>";
@@ -176,6 +186,8 @@
 				57D8F5EF17E4A1C10024C29B /* main.m in Sources */,
 				57D8F5F317E4A1C10024C29B /* AppDelegate.m in Sources */,
 				57D8F5FF17E4A1C10024C29B /* ViewController.m in Sources */,
+				57D8F60717E4A72B0024C29B /* SalvaDados.m in Sources */,
+				57D8F60A17E4DBE00024C29B /* Pessoa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +275,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConsultaData/ConsultaData-Prefix.pch";
 				INFOPLIST_FILE = "ConsultaData/ConsultaData-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,6 +287,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConsultaData/ConsultaData-Prefix.pch";
 				INFOPLIST_FILE = "ConsultaData/ConsultaData-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
