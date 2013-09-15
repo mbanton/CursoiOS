@@ -41,8 +41,8 @@
 		57D8F5FE17E4A1C10024C29B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		57D8F60517E4A72B0024C29B /* SalvaDados.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalvaDados.h; sourceTree = "<group>"; };
 		57D8F60617E4A72B0024C29B /* SalvaDados.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalvaDados.m; sourceTree = "<group>"; };
-		57D8F60817E4DBE00024C29B /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pessoa.h; path = ../Pessoa.h; sourceTree = "<group>"; };
-		57D8F60917E4DBE00024C29B /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pessoa.m; path = ../Pessoa.m; sourceTree = "<group>"; };
+		57D8F60817E4DBE00024C29B /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pessoa.h; sourceTree = "<group>"; };
+		57D8F60917E4DBE00024C29B /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pessoa.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +312,7 @@
 				57D8F60417E4A1C10024C29B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
