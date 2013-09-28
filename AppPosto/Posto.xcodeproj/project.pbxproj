@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573F09B417F7443100A20026 /* DetalhePosto.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F09B317F7443100A20026 /* DetalhePosto.m */; };
 		57A220DC17F70D0B00AF7AA6 /* ListaPostos.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A220DB17F70D0B00AF7AA6 /* ListaPostos.m */; };
 		57E352C217F6D05400E23C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E352C117F6D05400E23C26 /* UIKit.framework */; };
 		57E352C417F6D05400E23C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E352C317F6D05400E23C26 /* Foundation.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		573F09B217F7443100A20026 /* DetalhePosto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalhePosto.h; sourceTree = "<group>"; };
+		573F09B317F7443100A20026 /* DetalhePosto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalhePosto.m; sourceTree = "<group>"; };
 		57A220DA17F70D0B00AF7AA6 /* ListaPostos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaPostos.h; sourceTree = "<group>"; };
 		57A220DB17F70D0B00AF7AA6 /* ListaPostos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaPostos.m; sourceTree = "<group>"; };
 		57E352BE17F6D05400E23C26 /* Posto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Posto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,8 @@
 				57E352C817F6D05400E23C26 /* Supporting Files */,
 				57A220DA17F70D0B00AF7AA6 /* ListaPostos.h */,
 				57A220DB17F70D0B00AF7AA6 /* ListaPostos.m */,
+				573F09B217F7443100A20026 /* DetalhePosto.h */,
+				573F09B317F7443100A20026 /* DetalhePosto.m */,
 			);
 			path = Posto;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				57E352D217F6D05400E23C26 /* AppDelegate.m in Sources */,
 				57E352DE17F6D05500E23C26 /* ViewController.m in Sources */,
 				57A220DC17F70D0B00AF7AA6 /* ListaPostos.m in Sources */,
+				573F09B417F7443100A20026 /* DetalhePosto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

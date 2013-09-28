@@ -7,6 +7,7 @@
 //
 
 #import "ListaPostos.h"
+#import "DetalhePosto.h"
 
 
 @implementation ListaPostos
@@ -33,13 +34,13 @@ UITableView *minhaGrid;
     // Criando dados de teste
     NSDictionary *dado1 = [[NSDictionary alloc] initWithObjectsAndKeys:
                            @"Posto Nilo Peçanha", @"nomePosto",
-                           @"3333-1234", @"numeroTelefone", nil];
+                           @"3333-1234", @"numeroTelefone", @"1001", @"idPosto", nil];
     NSDictionary *dado2 = [[NSDictionary alloc] initWithObjectsAndKeys:
                            @"Posto Ipiranga", @"nomePosto",
-                           @"0800456 7898", @"numeroTelefone", nil];
+                           @"0800456 7898", @"numeroTelefone", @"1002", @"idPosto", nil];
     NSDictionary *dado3 = [[NSDictionary alloc] initWithObjectsAndKeys:
                            @"Posto Shell", @"nomePosto",
-                           @"4004-0001", @"numeroTelefone", nil];
+                           @"4004-0001", @"numeroTelefone", @"1003", @"idPosto", nil];
     
     meuDataSource = [[NSMutableArray alloc] initWithObjects:dado1, dado2, dado3, nil];
     
@@ -60,18 +61,21 @@ UITableView *minhaGrid;
 
 #pragma mark - Table view data source
 
+// Metodos necessários pela ScrollViewer
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+// Metodos necessários pela ScrollViewer
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return [filtro count];
 }
 
+// Metodos necessários pela ScrollViewer
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -94,11 +98,31 @@ UITableView *minhaGrid;
     return cell;
 }
 
+// Metodos necessários pela ScrollViewer
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    // Recuperar meu array
+    NSDictionary *dadosTemp = [filtro objectAtIndex: indexPath.row];
+    NSString *idPosto = [dadosTemp objectForKey:@"idPosto"];
+    
+    // Logando o que recuperei
     NSLog(@"Linha selecionada: %ld", (long) indexPath.row);
+    NSLog(@"idPosto selecionado: %@", idPosto);
+    
+
+    // Pegando da storyboard a ViewController de detalhamento dos postos
+    DetalhePosto *controller = (DetalhePosto*) [self.storyboard
+                                instantiateViewControllerWithIdentifier:@"DetalhePostosScreen" ];
+    // Setando a propriedade que será passada adiante
+    [controller setIdPosto:idPosto];
+    
+    // fazendo a navegação propriamente dita
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
+// Metodo de busca - Necessita que tenhamos no .h o delegate UISearchBarDelegate
 - (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     NSLog(@"Texto buscado: %@", searchText);
@@ -108,7 +132,7 @@ UITableView *minhaGrid;
     filtro = [NSMutableArray arrayWithArray: [meuDataSource filteredArrayUsingPredicate: predicate]];
     
     NSLog(@"Array filtrado: %@", filtro);
-    
+
     [minhaGrid reloadData];
     
 }
