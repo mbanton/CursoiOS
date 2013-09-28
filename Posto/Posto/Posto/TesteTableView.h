@@ -1,5 +1,5 @@
 //
-//  ListaPostos.h
+//  TesteTableView.h
 //  Posto
 //
 //  Created by Aluno on 28/09/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaPostos : UIViewController <UITableViewDataSource, UITabBarDelegate, UISearchBarDelegate>
+@interface TesteTableView : UITableViewController
 
 @end
