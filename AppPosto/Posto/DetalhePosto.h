@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetalhePosto : UIViewController
+@interface DetalhePosto : UIViewController<UIGestureRecognizerDelegate>
 
 @property (nonatomic, retain) IBOutlet NSString *idPosto;
 
