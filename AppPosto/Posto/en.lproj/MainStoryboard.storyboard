@@ -128,7 +128,7 @@
                                     <outlet property="delegate" destination="Zu0-14-g1t" id="J0j-Ua-UKz"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-uz-QAK">
+                            <tableView clipsSubviews="YES" tag="201" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-uz-QAK">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="419" id="GX7-ut-6F8"/>
@@ -206,21 +206,6 @@
             <point key="canvasLocation" x="833" y="95"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ListaPostos" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListaPostos.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="FazerLogin:"/>
-                <relationship kind="action" name="LimparCampos:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

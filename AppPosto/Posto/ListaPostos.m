@@ -13,6 +13,8 @@
 
 NSMutableArray *meuDataSource;
 UISearchBar *minhaBusca;
+NSMutableArray *filtro;
+UITableView *minhaGrid;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,9 +43,13 @@ UISearchBar *minhaBusca;
     
     meuDataSource = [[NSMutableArray alloc] initWithObjects:dado1, dado2, dado3, nil];
     
+    // Copio para o array filtro
+    filtro = [[NSMutableArray alloc] initWithArray:meuDataSource copyItems:TRUE];
+    
     // Controles
     minhaBusca = (UISearchBar *) [self.view viewWithTag:101];
-    
+    minhaGrid = (UITableView *) [self.view viewWithTag:201];
+                 
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +69,7 @@ UISearchBar *minhaBusca;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [meuDataSource count];
+    return [filtro count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,7 +85,7 @@ UISearchBar *minhaBusca;
 
     
     // Recuperando meus dados do array
-    NSDictionary *dadosTmp = [meuDataSource objectAtIndex:indexPath.row];
+    NSDictionary *dadosTmp = [filtro objectAtIndex:indexPath.row];
     nomePosto.text = [dadosTmp objectForKey:@"nomePosto"];
     telefonePosto.text = [dadosTmp objectForKey:@"numeroTelefone"];
 
@@ -96,6 +102,15 @@ UISearchBar *minhaBusca;
 - (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     NSLog(@"Texto buscado: %@", searchText);
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.nomePosto contains[c] %@", searchText];
+    
+    filtro = [NSMutableArray arrayWithArray: [meuDataSource filteredArrayUsingPredicate: predicate]];
+    
+    NSLog(@"Array filtrado: %@", filtro);
+    
+    [minhaGrid reloadData];
+    
 }
 
 
