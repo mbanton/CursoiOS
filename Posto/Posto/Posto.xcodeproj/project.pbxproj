@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57A220DC17F70D0B00AF7AA6 /* ListaPostos.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A220DB17F70D0B00AF7AA6 /* ListaPostos.m */; };
 		57E352C217F6D05400E23C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E352C117F6D05400E23C26 /* UIKit.framework */; };
 		57E352C417F6D05400E23C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E352C317F6D05400E23C26 /* Foundation.framework */; };
 		57E352C617F6D05400E23C26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E352C517F6D05400E23C26 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57A220DA17F70D0B00AF7AA6 /* ListaPostos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaPostos.h; sourceTree = "<group>"; };
+		57A220DB17F70D0B00AF7AA6 /* ListaPostos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaPostos.m; sourceTree = "<group>"; };
 		57E352BE17F6D05400E23C26 /* Posto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Posto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E352C117F6D05400E23C26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57E352C317F6D05400E23C26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 				57E352DC17F6D05500E23C26 /* ViewController.h */,
 				57E352DD17F6D05500E23C26 /* ViewController.m */,
 				57E352C817F6D05400E23C26 /* Supporting Files */,
+				57A220DA17F70D0B00AF7AA6 /* ListaPostos.h */,
+				57A220DB17F70D0B00AF7AA6 /* ListaPostos.m */,
 			);
 			path = Posto;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				57E352CE17F6D05400E23C26 /* main.m in Sources */,
 				57E352D217F6D05400E23C26 /* AppDelegate.m in Sources */,
 				57E352DE17F6D05500E23C26 /* ViewController.m in Sources */,
+				57A220DC17F70D0B00AF7AA6 /* ListaPostos.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				57E352E317F6D05500E23C26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListaPostos.h
 //  Posto
 //
 //  Created by Aluno on 28/09/13.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-- (IBAction)FazerLogin:(id)sender;
-- (IBAction)LimparCampos:(id)sender;
-
+@interface ListaPostos : UIViewController
 
 @end
