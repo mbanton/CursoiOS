@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FreteViewController.h"
+#import "CorreiosWSResponse.h"
+#import "LocationManager.h"
 
-@interface ViewController : UIViewController<UITextFieldDelegate>
+@interface ViewController : FreteViewController<UITextFieldDelegate>
 - (IBAction)buscaValor:(id)sender;
+- (IBAction)detectarCep:(id)sender;
 
 @end

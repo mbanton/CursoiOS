@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57740C4618007E7F00D7EF48 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57740C4518007E7F00D7EF48 /* LocationManager.m */; };
+		57740C481800847100D7EF48 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57740C471800847100D7EF48 /* CoreLocation.framework */; };
+		57740C4B18008ACC00D7EF48 /* FreteSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57740C4A18008ACC00D7EF48 /* FreteSingleton.m */; };
+		57740C4E18008AF000D7EF48 /* FreteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57740C4D18008AF000D7EF48 /* FreteViewController.m */; };
 		57E86AD81800571200E2B47C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E86AD71800571200E2B47C /* UIKit.framework */; };
 		57E86ADA1800571200E2B47C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E86AD91800571200E2B47C /* Foundation.framework */; };
 		57E86ADC1800571200E2B47C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E86ADB1800571200E2B47C /* CoreGraphics.framework */; };
@@ -24,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57740C4418007E7F00D7EF48 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		57740C4518007E7F00D7EF48 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		57740C471800847100D7EF48 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		57740C4918008ACC00D7EF48 /* FreteSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreteSingleton.h; sourceTree = "<group>"; };
+		57740C4A18008ACC00D7EF48 /* FreteSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreteSingleton.m; sourceTree = "<group>"; };
+		57740C4C18008AEF00D7EF48 /* FreteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreteViewController.h; sourceTree = "<group>"; };
+		57740C4D18008AF000D7EF48 /* FreteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreteViewController.m; sourceTree = "<group>"; };
 		57E86AD41800571200E2B47C /* CalculaFrete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculaFrete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E86AD71800571200E2B47C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57E86AD91800571200E2B47C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57740C481800847100D7EF48 /* CoreLocation.framework in Frameworks */,
 				57E86AD81800571200E2B47C /* UIKit.framework in Frameworks */,
 				57E86ADA1800571200E2B47C /* Foundation.framework in Frameworks */,
 				57E86ADC1800571200E2B47C /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +93,7 @@
 		57E86AD61800571200E2B47C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57740C471800847100D7EF48 /* CoreLocation.framework */,
 				57E86AD71800571200E2B47C /* UIKit.framework */,
 				57E86AD91800571200E2B47C /* Foundation.framework */,
 				57E86ADB1800571200E2B47C /* CoreGraphics.framework */,
@@ -101,6 +114,12 @@
 				57E86ADE1800571200E2B47C /* Supporting Files */,
 				57E86B0218005AFA00E2B47C /* CorreiosWSResponse.h */,
 				57E86B0318005AFA00E2B47C /* CorreiosWSResponse.m */,
+				57740C4418007E7F00D7EF48 /* LocationManager.h */,
+				57740C4518007E7F00D7EF48 /* LocationManager.m */,
+				57740C4918008ACC00D7EF48 /* FreteSingleton.h */,
+				57740C4A18008ACC00D7EF48 /* FreteSingleton.m */,
+				57740C4C18008AEF00D7EF48 /* FreteViewController.h */,
+				57740C4D18008AF000D7EF48 /* FreteViewController.m */,
 			);
 			path = CalculaFrete;
 			sourceTree = "<group>";
@@ -208,6 +227,9 @@
 				57E86AF41800571200E2B47C /* ViewController.m in Sources */,
 				57E86AFE1800586300E2B47C /* XMLDictionary.m in Sources */,
 				57E86B0418005AFA00E2B47C /* CorreiosWSResponse.m in Sources */,
+				57740C4618007E7F00D7EF48 /* LocationManager.m in Sources */,
+				57740C4B18008ACC00D7EF48 /* FreteSingleton.m in Sources */,
+				57740C4E18008AF000D7EF48 /* FreteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +352,7 @@
 				57E86AF91800571200E2B47C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

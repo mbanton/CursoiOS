@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FreteViewController.h"
 
-@interface CorreiosWSResponse : UIViewController
+@interface CorreiosWSResponse : FreteViewController
 
 @property (nonatomic, retain) IBOutlet NSString *cepOrigem;
 @property (nonatomic, retain) IBOutlet NSString *cepDestino;

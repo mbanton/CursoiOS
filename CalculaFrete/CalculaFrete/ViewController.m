@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CorreiosWSResponse.h"
 
 
 @implementation ViewController
@@ -41,7 +40,7 @@ UITextField *CepDestino;
     
     
     // Parametros
-    [controller setCepOrigem:((UITextField *) [self.view viewWithTag:1]).text];
+    [controller setCepOrigem:((UILabel *) [self.view viewWithTag:1]).text];
     [controller setCepDestino:((UITextField *) [self.view viewWithTag:2]).text];
     [controller setAltura:((UITextField *) [self.view viewWithTag:3]).text];
     [controller setLargura:((UITextField *) [self.view viewWithTag:4]).text];
@@ -52,17 +51,23 @@ UITextField *CepDestino;
     
 }
 
+- (IBAction)detectarCep:(id)sender {
+    LocationManager* controller = (LocationManager*) [self.storyboard
+                                                            instantiateViewControllerWithIdentifier:@"LocationManagerScreen"];
+    
+    // Parametros
+    [controller setCepDetectado: (UILabel *) [self.view viewWithTag:1]];
+    
+    [self.navigationController presentViewController:controller animated:YES completion:nil];
+     
+
+}
+
+
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == CepOrigem)
-    {
-        [CepDestino becomeFirstResponder];
-    }
-    else
-    {
-        [textField resignFirstResponder];
-    }
-    
+
+    [textField resignFirstResponder];
     return NO;
 }
 
