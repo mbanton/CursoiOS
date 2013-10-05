@@ -146,6 +146,8 @@ NSMutableData *webData;
     
     if ( error ) {
         NSLog(@"ERRO ----- %@", msgError);
+        // TODO chamar metodo
+        // [ self.returnError msgError ]
     }
     
     NSString *ValorCorreios = [xmlDoc valueForKeyPath:@"soap:Body.CalcPrecoDataResponse.CalcPrecoDataResult.Servicos.cServico.Valor"];
@@ -154,6 +156,16 @@ NSMutableData *webData;
     NSLog(@"Valor Orçamento Correios: %@", ValorCorreios);
     UILabel *ValorServico = (UILabel *)[self.view viewWithTag:1];
     ValorServico.text = ValorCorreios;
+}
+
+- (void) returnError: (NSString *) msg
+{
+
+    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"ERRO" message: [NSString stringWithFormat: @"Ops... %@", msg] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alerta show];
+    
+    [self.navigationController popToRootViewControllerAnimated:true];
+    
 }
 
 
