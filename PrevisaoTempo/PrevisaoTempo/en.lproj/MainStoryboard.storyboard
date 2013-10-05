@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LtX-wY-6Pj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nT5-0X-Mq3">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="LtX-wY-6Pj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JFo-ya-hbr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="EET-Fz-LyY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lik-5P-AdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-325" y="79"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AoL-vZ-gFk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="EWT-pe-jVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Digite o nome da cidade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wno-JC-dk2">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPd-sJ-z1N">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Buscar">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clicadoBuscar:" destination="2" eventType="touchDown" id="ZJF-87-bA6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wno-JC-dk2" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="0iq-S9-guw"/>
+                            <constraint firstAttribute="trailing" secondItem="AoL-vZ-gFk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3j9-4t-6q9"/>
+                            <constraint firstItem="oPd-sJ-z1N" firstAttribute="centerX" secondItem="AoL-vZ-gFk" secondAttribute="centerX" type="default" id="57T-KP-cBM"/>
+                            <constraint firstItem="Wno-JC-dk2" firstAttribute="top" secondItem="3" secondAttribute="top" constant="44" id="Wgs-h7-Vgg"/>
+                            <constraint firstItem="oPd-sJ-z1N" firstAttribute="top" secondItem="3" secondAttribute="top" constant="141" id="hX1-Qa-zna"/>
+                            <constraint firstItem="AoL-vZ-gFk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="96" id="lG8-pf-8ZN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QrO-Hc-3Mr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101" y="79"/>
+        </scene>
+        <!--Busca Dados-->
+        <scene sceneID="2tK-Hv-AMZ">
+            <objects>
+                <viewController storyboardIdentifier="BuscaDadosScreen" id="Pc9-LR-d3R" customClass="BuscaDados" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Obp-gD-3dk">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="CIDADE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2p-iw-w7V">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="312" id="v1U-tT-UOC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Temperatura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHu-Ee-EYI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="1SD-6y-Ghs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Nuvem.png" translatesAutoresizingMaskIntoConstraints="NO" id="doB-el-0ug">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="UYq-64-rdM"/>
+                                    <constraint firstAttribute="width" constant="240" id="dDM-fz-Su7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="doB-el-0ug" firstAttribute="leading" secondItem="Obp-gD-3dk" secondAttribute="leading" constant="25" id="093-Vf-h9x"/>
+                            <constraint firstItem="doB-el-0ug" firstAttribute="top" secondItem="Obp-gD-3dk" secondAttribute="top" constant="55" id="H3O-tu-V0B"/>
+                            <constraint firstItem="F2p-iw-w7V" firstAttribute="top" secondItem="Obp-gD-3dk" secondAttribute="top" constant="203" id="JNH-Mb-QGs"/>
+                            <constraint firstItem="HHu-Ee-EYI" firstAttribute="top" secondItem="Obp-gD-3dk" secondAttribute="top" constant="247" id="aGz-aL-35c"/>
+                            <constraint firstItem="F2p-iw-w7V" firstAttribute="centerX" secondItem="Obp-gD-3dk" secondAttribute="centerX" type="default" id="ceh-JM-TOc"/>
+                            <constraint firstItem="HHu-Ee-EYI" firstAttribute="leading" secondItem="F2p-iw-w7V" secondAttribute="leading" type="default" id="r0Z-3t-3cQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TvS-6a-lTL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5Y-sE-Ok1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="587" y="79"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Nuvem.png" width="454" height="269"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
