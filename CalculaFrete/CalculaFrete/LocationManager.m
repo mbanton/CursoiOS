@@ -7,6 +7,7 @@
 //
 
 #import "LocationManager.h"
+#import "XMLDictionary.h"
 
 @implementation LocationManager
 
@@ -90,8 +91,8 @@ NSString *DadosLocation;
         /// Dados Localização
         [self DadosGoogle];
         
-        //        /// Para de atualizar
-        //        [locationManager stopUpdatingLocation];
+        // Para de atualizar
+        [locationManager stopUpdatingLocation];
         
         /// Marca como já coletado
         DadosLocation = @"S";
@@ -101,9 +102,63 @@ NSString *DadosLocation;
 - (void)DadosGoogle
 {
     
+    NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=false", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
+    NSLog(@"Google Request: %@", url);
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
+    
+    NSString *StringResponse = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    /// Verifica se encontrou resultados na API do Google
+    if ([StringResponse length] > 0)
+    {
+        NSLog(@"StringResponse: %@", StringResponse);
+        
+        NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLString:StringResponse];
+        
+        NSArray *aResult = [xmlDoc valueForKeyPath:@"result"];
+        
+        for (int i = 0; i < 1; i++) {
+            NSArray *aAdd = [[aResult objectAtIndex:i ] valueForKeyPath:@"address_component"];
+            
+            NSArray *oType = [aAdd valueForKeyPath:@"type"];
+            NSArray *oLongN = [aAdd valueForKeyPath:@"long_name"];
+            
+            NSLog(@"oType: %@", oType);
+            NSLog(@"oLongN: %@", [aAdd valueForKeyPath:@"long_name"]);
+            NSLog(@"oLongArray: %@", [oLongN objectAtIndex:3]);
+            
+            for (int i = 0; i < oType.count; i++) {
+                NSLog(@"%d - %@", i, [oType objectAtIndex:i]);
+                
+                @try {
+                    NSArray *Tipagem = [oType objectAtIndex:i];
+                    
+                    NSLog(@"TIIIIPP: %@",[Tipagem objectAtIndex:0]);
+                    if ([[Tipagem objectAtIndex:0] isEqualToString:@"locality"])
+                    {
+                        NSLog(@"Cidade.text: %@", [oLongN objectAtIndex:i]);
+                        //Cidade.text = [oLongN objectAtIndex:i];
+                    }
+                }
+                @catch (NSException *exception) {
+                }
+                @finally {
+                }
+                
+            }
+            
+        }
+    }
+    else
+    {
+        NSLog(@"Não encontrei resultados na api do Google a coordenada detectada.");
+    }
+    
+    
     NSString *tmp = [NSString stringWithFormat:@"123456-000"];
     
-    NSLog(@"Puxar dados do Google. CEP FAKE: %@", tmp);
+    NSLog(@"Puxando dados do Google. CEP FAKE: %@", tmp);
     
     responseLabel.text = tmp;
     
@@ -113,56 +168,6 @@ NSString *DadosLocation;
     // grava no parametro de retorno
     cepDetectado.text = tmp;
     
-//    NSString *url = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%f,%f&sensor=false", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
-//    NSLog(@"Google Request: %@", url);
-//    
-//    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
-//    
-//    NSString *StringResponse = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//    
-//    /// Verifica se encontrou resultados... senão envia para tela de cadastro de dúvida
-//    if ([StringResponse length] > 0)
-//    {
-//        NSLog(@"StringResponse: %@", StringResponse);
-//        
-//        NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLString:StringResponse];
-//        
-//        NSArray *aResult = [xmlDoc valueForKeyPath:@"result"];
-//        
-//        
-//        
-//        for (int i = 0; i < 1; i++) {
-//            NSArray *aAdd = [[aResult objectAtIndex:i ] valueForKeyPath:@"address_component"];
-//            
-//            NSArray *oType = [aAdd valueForKeyPath:@"type"];
-//            NSArray *oLongN = [aAdd valueForKeyPath:@"long_name"];
-//            
-//            NSLog(@"oType: %@", oType);
-//            NSLog(@"oLongN: %@", [aAdd valueForKeyPath:@"long_name"]);
-//            NSLog(@"oLongArray: %@", [oLongN objectAtIndex:3]);
-//            
-//            for (int i = 0; i < oType.count; i++) {
-//                NSLog(@"%d - %@", i, [oType objectAtIndex:i]);
-//                
-//                @try {
-//                    NSArray *Tipagem = [oType objectAtIndex:i];
-//                    
-//                    NSLog(@"TIIIIPP: %@",[Tipagem objectAtIndex:0]);
-//                    if ([[Tipagem objectAtIndex:0] isEqualToString:@"locality"])
-//                    {
-//                        NSLog(@"Cidade.text: %@", [oLongN objectAtIndex:i]);
-//                        Cidade.text = [oLongN objectAtIndex:i];
-//                    }
-//                }
-//                @catch (NSException *exception) {
-//                }
-//                @finally {
-//                }
-//                
-//            }
-//            
-//        }
-//    }
 
 }
 

@@ -11,19 +11,11 @@
 
 @implementation ViewController
 
-UITextField *CepOrigem;
-UITextField *CepDestino;
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    /// Controles
-    CepOrigem = (UITextField *) [self.view viewWithTag:1];
-    CepDestino = (UITextField *) [self.view viewWithTag:2];
-    
     
 }
 
