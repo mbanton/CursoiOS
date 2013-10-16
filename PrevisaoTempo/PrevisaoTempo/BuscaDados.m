@@ -40,7 +40,7 @@ UIActivityIndicatorView *loader;
     [loader startAnimating];
     
     
-    NSString *url = [[NSString alloc] initWithFormat:@"http://www.previsaodotempo.org/apiX.php?city=%@", nomeCidade];
+    NSString *url = [[NSString alloc] initWithFormat:@"http://www.previsaodotempo.org/api.php?city=%@", nomeCidade];
     
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
