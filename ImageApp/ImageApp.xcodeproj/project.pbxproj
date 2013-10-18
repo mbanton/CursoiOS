@@ -18,7 +18,6 @@
 		571075F117F75D3D002E95AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 571075F017F75D3D002E95AD /* Default-568h@2x.png */; };
 		571075F417F75D3D002E95AD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571075F217F75D3D002E95AD /* MainStoryboard.storyboard */; };
 		571075F717F75D3D002E95AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571075F617F75D3D002E95AD /* ViewController.m */; };
-		571075FE17F75DF1002E95AD /* imagesmothers-are-right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 571075FD17F75DF1002E95AD /* imagesmothers-are-right.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +37,6 @@
 		571075F317F75D3D002E95AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		571075F517F75D3D002E95AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		571075F617F75D3D002E95AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		571075FD17F75DF1002E95AD /* imagesmothers-are-right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "imagesmothers-are-right.jpg"; path = "../../../../Downloads/imagesmothers-are-right.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 		571075E017F75D3D002E95AD /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
-				571075FD17F75DF1002E95AD /* imagesmothers-are-right.jpg */,
 				571075E917F75D3D002E95AD /* AppDelegate.h */,
 				571075EA17F75D3D002E95AD /* AppDelegate.m */,
 				571075F217F75D3D002E95AD /* MainStoryboard.storyboard */,
@@ -166,7 +163,6 @@
 				571075EF17F75D3D002E95AD /* Default@2x.png in Resources */,
 				571075F117F75D3D002E95AD /* Default-568h@2x.png in Resources */,
 				571075F417F75D3D002E95AD /* MainStoryboard.storyboard in Resources */,
-				571075FE17F75DF1002E95AD /* imagesmothers-are-right.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +226,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -254,7 +250,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -267,6 +263,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageApp/ImageApp-Prefix.pch";
 				INFOPLIST_FILE = "ImageApp/ImageApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -278,6 +275,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageApp/ImageApp-Prefix.pch";
 				INFOPLIST_FILE = "ImageApp/ImageApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -302,6 +300,7 @@
 				571075FC17F75D3D002E95AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
