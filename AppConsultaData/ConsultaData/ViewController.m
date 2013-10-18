@@ -22,16 +22,16 @@ UITextField *BoxTelefone;
     
     // Criar os componentes via código
     UILabel *LabelNome = [[UILabel alloc] initWithFrame:
-                          CGRectMake(10, 10, 100, 25)];
+                          CGRectMake(10, 90, 100, 25)];
     
     BoxNome = [[UITextField alloc] initWithFrame:
-                            CGRectMake(110, 10, 200, 25)];
+                            CGRectMake(110, 90, 200, 25)];
     
     UILabel *LabelTelefone = [[UILabel alloc] initWithFrame:
-                              CGRectMake(10,60, 100,25)];
+                              CGRectMake(10, 140, 100,25)];
     
     BoxTelefone = [[UITextField alloc] initWithFrame:
-                               CGRectMake(110, 60, 200, 25)];
+                               CGRectMake(110, 140, 200, 25)];
     
     BoxNome.borderStyle = UITextBorderStyleRoundedRect;
     BoxTelefone.borderStyle = UITextBorderStyleRoundedRect;
