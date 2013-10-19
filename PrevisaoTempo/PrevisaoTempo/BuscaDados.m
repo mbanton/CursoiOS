@@ -154,4 +154,37 @@ UIActivityIndicatorView *loader;
 }
 
 
+- (IBAction)doEscreveArquivo:(id)sender
+{
+    /// Pasta
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"MeuArquivo.txt"];
+    NSLog(@"ArquivloLocal: %@", filePath);
+    
+    /// Grava
+    
+    [TextoAGravar.text writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
+    
+}
+
+- (IBAction)doLeArquivo:(id)sender
+{
+    NSLog(@"aaa");
+    
+    /// Pasta
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"MeuArquivo.txt"];
+    NSLog(@"Path: %@", filePath);
+    
+    
+    /// Lê Arquivo e guarda em uma variável
+    NSString *ArquivoCompleto = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    /// Mostra no label
+    [TextoMostrar setText:ArquivoCompleto];
+    
+}
+
+
 @end
