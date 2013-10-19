@@ -11,6 +11,6 @@
 
 @interface RootController : UIViewController
 
-@property (nonatomic, retain) IBOutlet RootSingleton *singleton;
+@property (nonatomic, retain) IBOutlet RootSingleton *iSingleton;
 
 @end

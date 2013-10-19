@@ -26,7 +26,7 @@
     
     // Setting class singleton variable
     RootSingleton *singletonTemp = [RootSingleton sharedManager];
-    [self setSingleton:singletonTemp];
+    [self setISingleton:singletonTemp];
     
 }
 
