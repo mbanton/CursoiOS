@@ -15,6 +15,7 @@
 @synthesize nomeCidade;
 
 UIActivityIndicatorView *loader;
+NSData *retornoServico;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -64,8 +65,6 @@ UIActivityIndicatorView *loader;
             
             //NSLog(@"Acabei o trecho async");
             
-            // NAO ROLA AQUI
-            [loader stopAnimating];
             
             NSLog(@"FIM");
         });
@@ -93,7 +92,27 @@ UIActivityIndicatorView *loader;
 - (void) CallbackJSon: (NSData *) dataResponse
 {
     NSError *error;
-    NSDictionary *jSon = ([NSJSONSerialization JSONObjectWithData:dataResponse options:kNilOptions error:&error]);
+    NSDictionary *jSon;
+    
+    if ( dataResponse == nil ) {
+        
+        NSLog(@"Sem conexao, buscando do cache");
+        
+        [ self leCache ];
+        jSon = ([NSJSONSerialization JSONObjectWithData:retornoServico options:kNilOptions error:&error]);
+        
+
+    } else {
+        NSLog(@"OK, temos conexao");
+        
+        jSon = ([NSJSONSerialization JSONObjectWithData:dataResponse options:kNilOptions error:&error]);
+        retornoServico = dataResponse;
+        [ self escreveCache];
+        
+    }
+    
+    
+    
     
     NSLog(@"ERRO: %@", error);
     
@@ -145,16 +164,21 @@ UIActivityIndicatorView *loader;
         Temperatura.text = TempC;
         
         NSLog(@"TempC: %@", TempC);
+        
+        
+        
         // C
         //-32 *1.8
     }
+    
+    [loader stopAnimating];
     
     
     
 }
 
 
-- (IBAction)doEscreveArquivo:(id)sender
+- (void) escreveCache
 {
     /// Pasta
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
@@ -163,12 +187,12 @@ UIActivityIndicatorView *loader;
     
     /// Grava
     
-    [TextoAGravar.text writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    [ retornoServico writeToFile:filePath atomically:YES];
     
     
 }
 
-- (IBAction)doLeArquivo:(id)sender
+- (void) leCache
 {
     NSLog(@"aaa");
     
@@ -178,11 +202,8 @@ UIActivityIndicatorView *loader;
     NSLog(@"Path: %@", filePath);
     
     
-    /// Lê Arquivo e guarda em uma variável
-    NSString *ArquivoCompleto = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    
     /// Mostra no label
-    [TextoMostrar setText:ArquivoCompleto];
+    retornoServico = [ NSData dataWithContentsOfFile:filePath];
     
 }
 
