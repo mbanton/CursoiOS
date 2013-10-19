@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nuvem.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pe6-aD-SCV">
+                                <rect key="frame" x="49" y="76" width="222" height="132"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="9wU-i5-9l5"/>
+                                    <constraint firstAttribute="width" constant="222" id="Jv9-Br-OTI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porto Alegre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNe-lK-Xhr">
+                                <rect key="frame" x="10" y="244" width="301" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="g2h-V4-E1r"/>
+                                    <constraint firstAttribute="width" constant="301" id="k7d-LE-3Ep"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-md-XXw">
+                                <rect key="frame" x="10" y="280" width="301" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uxi-mJ-jbh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98138621948310123" green="1" blue="0.3546451070026887" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aNe-lK-Xhr" firstAttribute="leading" secondItem="CHX-md-XXw" secondAttribute="leading" type="default" id="3nh-eV-kmj"/>
+                            <constraint firstItem="aNe-lK-Xhr" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" type="default" id="GA0-1m-K0c"/>
+                            <constraint firstItem="Pe6-aD-SCV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="76" id="Ka7-QZ-efr"/>
+                            <constraint firstItem="aNe-lK-Xhr" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="244" id="MiS-Nr-aVr"/>
+                            <constraint firstItem="Pe6-aD-SCV" firstAttribute="centerX" secondItem="aNe-lK-Xhr" secondAttribute="centerX" type="default" id="UXI-n0-idm"/>
+                            <constraint firstAttribute="bottom" secondItem="CHX-md-XXw" secondAttribute="bottom" constant="218" id="ec3-6i-txr"/>
+                            <constraint firstItem="CHX-md-XXw" firstAttribute="trailing" secondItem="aNe-lK-Xhr" secondAttribute="trailing" type="default" id="w6C-1K-0aI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Nuvem.png" width="454" height="269"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
