@@ -16,3 +16,8 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+# cococapods ignored
+Player/Pods/*
+
+
