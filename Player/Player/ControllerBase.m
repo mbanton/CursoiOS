@@ -1,14 +1,14 @@
 //
-//  RootController.m
+//  ControllerBase.h
 //  Player
 //
 //  Created by Marcelo Anton on 19/10/13.
 //  Copyright (c) 2013 Marcelo Anton. All rights reserved.
 //
 
-#import "RootController.h"
+#import "ControllerBase.h"
 
-@implementation RootController
+@implementation ControllerBase
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,9 +23,8 @@
 {
     [super viewDidLoad];
     
-    
     // Setting class singleton variable
-    RootSingleton *singletonTemp = [RootSingleton sharedManager];
+    Singleton *singletonTemp = [Singleton sharedManager];
     [self setISingleton:singletonTemp];
     
 }

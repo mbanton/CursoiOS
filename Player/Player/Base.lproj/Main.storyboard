@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-760" y="8"/>
         </scene>
-        <!--Genre List-->
+        <!--Music List-->
         <scene sceneID="wbR-Au-zLV">
             <objects>
-                <viewController storyboardIdentifier="GenreList" id="dNS-yB-JUr" customClass="GenreList" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicList" id="dNS-yB-JUr" customClass="MusicList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eXl-LH-Ol9"/>
                         <viewControllerLayoutGuide type="bottom" id="O8q-GQ-QNR"/>
@@ -44,14 +44,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellGenre" id="OEt-YE-r7G">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="OEt-YE-r7G">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OEt-YE-r7G" id="hbN-V9-nrm">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPv-Eh-G9I">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPv-Eh-G9I">
                                                     <rect key="frame" x="20" y="11" width="280" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -79,9 +79,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3u1-Cs-sMc"/>
-                    <connections>
-                        <outlet property="tableViewGenre" destination="uHG-Te-Sqn" id="ddJ-00-5sz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo9-iS-Rll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 Marcelo Anton. All rights reserved.
 //
 
-#import "RootController.h"
+#import <UIKit/UIKit.h>
+#import "ControllerBase.h"
 
-@interface MusicPlay : RootController
+@interface MusicPlay : ControllerBase
 
 @end

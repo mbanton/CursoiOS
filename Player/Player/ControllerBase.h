@@ -1,14 +1,16 @@
 //
-//  MusicList.h
+//  ControllerBase.h
 //  Player
 //
 //  Created by Marcelo Anton on 19/10/13.
 //  Copyright (c) 2013 Marcelo Anton. All rights reserved.
 //
+
 #import <UIKit/UIKit.h>
-#import "ControllerBase.h"
+#import "Singleton.h"
 
-@interface MusicList : ControllerBase<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface ControllerBase : UIViewController
 
+@property (nonatomic, retain) IBOutlet Singleton *iSingleton;
 
 @end

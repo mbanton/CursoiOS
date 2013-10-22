@@ -1,5 +1,5 @@
 //
-//  RootSingleton.h
+//  Singleton.h
 //  Player
 //
 //  Created by Marcelo Anton on 19/10/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RootSingleton : NSObject
+@interface Singleton : NSObject
 
 // Constants
 #define SERVICE_GENRE_URL @"http://www.naprainha.com.br/service.php?srv=genre"

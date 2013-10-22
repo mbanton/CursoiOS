@@ -10,10 +10,16 @@
 
 @implementation MusicList
 
-NSMutableArray *meuDataSource;
-UISearchBar *minhaBusca;
-NSMutableArray *filtro;
-UITableView *minhaGrid;
+
+// Data
+NSMutableArray *data;
+NSMutableArray *filters;
+
+// Local controls
+UITableView *tableViewMusicList;
+
+// Return format:
+// 6[* Top Hits|7[Axé|16[Latina|9[Pop/Dance|3[Reggae|13[Rock|1[Romanticas|2[Samba/Pagode|15[Sertanejo
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +34,13 @@ UITableView *minhaGrid;
 {
     [super viewDidLoad];
     
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    
     // Criando dados de teste
     NSDictionary *dado1 = [[NSDictionary alloc] initWithObjectsAndKeys:
                            @"Posto Nilo Peçanha", @"nomePosto",
@@ -39,14 +52,13 @@ UITableView *minhaGrid;
                            @"Posto Shell", @"nomePosto",
                            @"4004-0001", @"numeroTelefone", @"1003", @"idPosto", nil];
     
-    meuDataSource = [[NSMutableArray alloc] initWithObjects:dado1, dado2, dado3, nil];
+    data = [[NSMutableArray alloc] initWithObjects:dado1, dado2, dado3, nil];
     
     // Copio para o array filtro
-    filtro = [[NSMutableArray alloc] initWithArray:meuDataSource copyItems:TRUE];
+    filters = [[NSMutableArray alloc] initWithArray:data copyItems:TRUE];
     
-    // Controles
-    minhaBusca = (UISearchBar *) [self.view viewWithTag:101];
-    minhaGrid = (UITableView *) [self.view viewWithTag:201];
+    // Controls
+    UITableView *tableViewMusicList = (UITableView*)[self.view viewWithTag:2];
     
 }
 
@@ -69,38 +81,35 @@ UITableView *minhaGrid;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [filtro count];
+    NSLog(@"Filters Count: %lu", (unsigned long)filters.count);
+    return [filters count];
 }
 
 // Metodos necessários pela ScrollViewer
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
-    // Pegando a label
-    UILabel *nomePosto = (UILabel *)[cell viewWithTag:1];
-    UILabel *telefonePosto = (UILabel *)[cell viewWithTag:2];
-    
+    /// Controle
+    UILabel *nmGenero = (UILabel *)[cell viewWithTag:21];
     
     // Recuperando meus dados do array
-    NSDictionary *dadosTmp = [filtro objectAtIndex:indexPath.row];
-    nomePosto.text = [dadosTmp objectForKey:@"nomePosto"];
-    telefonePosto.text = [dadosTmp objectForKey:@"numeroTelefone"];
-    
-    
+    NSDictionary *tmp = [filters objectAtIndex:indexPath.row];
+    nmGenero.text = [tmp objectForKey:@"nomePosto"];
     
     return cell;
 }
+
+#pragma mark - UITableView Delegate Methods
 
 // Metodos necessários pela ScrollViewer
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     // Recuperar meu array
-    NSDictionary *dadosTemp = [filtro objectAtIndex: indexPath.row];
+    NSDictionary *dadosTemp = [filters objectAtIndex: indexPath.row];
     NSString *idPosto = [dadosTemp objectForKey:@"idPosto"];
     
     // Logando o que recuperei
@@ -110,7 +119,7 @@ UITableView *minhaGrid;
     
     // Pegando da storyboard a ViewController de detalhamento dos postos
     //DetalhePosto *controller = (DetalhePosto*) [self.storyboard
-    //instantiateViewControllerWithIdentifier:@"DetalhePostosScreen" ];
+                                                //instantiateViewControllerWithIdentifier:@"DetalhePostosScreen" ];
     // Setando a propriedade que será passada adiante
     //[controller setIdPosto:idPosto];
     
@@ -119,6 +128,60 @@ UITableView *minhaGrid;
     
 }
 
+
+/*
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
+
+/*
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
+
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
+ */
+
+#pragma mark - Search Bar Delegate
+
 // Metodo de busca - Necessita que tenhamos no .h o delegate UISearchBarDelegate
 - (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -126,14 +189,14 @@ UITableView *minhaGrid;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.nomePosto contains[c] %@", searchText];
     
-    filtro = [NSMutableArray arrayWithArray: [meuDataSource filteredArrayUsingPredicate: predicate]];
+    filters = [NSMutableArray arrayWithArray: [data filteredArrayUsingPredicate: predicate]];
     
-    NSLog(@"Array filtrado: %@", filtro);
+    NSLog(@"Array filtrado: %@", filters);
     
-    [minhaGrid reloadData];
+    [tableViewMusicList reloadData];
     
 }
 
 
-@end
 
+@end
