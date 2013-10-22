@@ -7,6 +7,7 @@
 //
 
 #import "MusicList.h"
+#import "AFNetworking.h"
 
 @implementation MusicList
 
@@ -39,6 +40,13 @@ UITableView *tableViewMusicList;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:SERVICE_GENRE_URL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 
     
     // Criando dados de teste
